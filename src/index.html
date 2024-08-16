@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket IO Chat App</title>
+
+    <!-- Embedded CSS Styles -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #message-bar {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #notification {
+            color: #fff;
+        }
+        
+        .container {
+            height: 100vh;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        textarea {
+            font-size: 16px;
+            margin-bottom: 30px;
+            padding: 15px;
+            outline: none;
+        }
+        
+        button {
+            width: 200px;
+            padding: 15px;
+            cursor: pointer;
+            background-color: #2c3639;
+            outline: none;
+            border: none;
+            color: #dcd7c9;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #3f4e4f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message-bar">
+        <p id="notification"></p>
+    </div>
+    <form class="container">
+        <h2>Send Messages with Socket.io</h2>
+        <textarea rows="5" width="100%" name="message" id="message" placeholder="Enter your message..."></textarea>
+        <button>SEND MESSAGE</button>
+    </form>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io();
+</script>
+
+</html>
